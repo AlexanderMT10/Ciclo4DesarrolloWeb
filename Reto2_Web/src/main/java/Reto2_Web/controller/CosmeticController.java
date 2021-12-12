@@ -40,8 +40,8 @@ public class CosmeticController {
     
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
-    public Cosmetic create (@RequestBody Cosmetic gadget){
-        return cosmeticService.create(gadget);
+    public Cosmetic save (@RequestBody Cosmetic gadget){
+        return cosmeticService.save(gadget);
     }
     
     @PutMapping("/update")

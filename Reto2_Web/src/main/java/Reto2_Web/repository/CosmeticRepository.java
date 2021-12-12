@@ -24,7 +24,7 @@ public class CosmeticRepository {
         return repository.findById(reference);
     }
     
-    public Cosmetic create(Cosmetic clothe){
+    public Cosmetic save(Cosmetic clothe){
         return repository.save(clothe);
     }
     

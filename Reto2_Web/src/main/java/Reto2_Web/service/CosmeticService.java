@@ -24,11 +24,11 @@ public class CosmeticService {
         return cosmeticCrudRepository.getClothe(reference);
     }
     
-    public Cosmetic create(Cosmetic accesory) {
+    public Cosmetic save(Cosmetic accesory) {
         if (accesory.getReference() == null){
             return accesory;
         }else{
-            return cosmeticCrudRepository.create(accesory);
+            return cosmeticCrudRepository.save(accesory);
         }
     }
     
