@@ -1,0 +1,16 @@
+Reto2_Web\model\Cosmetic.class
+Reto2_Web\infertace\InterfaceUser.class
+Reto2_Web\infertace\InterfaceCosmetic.class
+Reto2_Web\controller\CosmeticController.class
+Reto2_Web\repository\CosmeticRepository.class
+Reto2_Web\service\CosmeticService.class
+Reto2_Web\repository\UserRepository.class
+Reto2_Web\service\OrderService.class
+Reto2_Web\Reto2WebApplication.class
+Reto2_Web\controller\OrderController.class
+Reto2_Web\repository\OrderRepository.class
+Reto2_Web\controller\UserController.class
+Reto2_Web\service\UserService.class
+Reto2_Web\model\User.class
+Reto2_Web\infertace\InterfaceOrder.class
+Reto2_Web\model\Order.class
