@@ -1,6 +1,7 @@
 package Reto2_Web.infertace;
 
 import Reto2_Web.model.Order;
+import java.util.Date;
 import java.util.List;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
@@ -10,4 +11,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface InterfaceOrder extends MongoRepository<Order, Integer> {
     List<Order> findBySalesManZone(String zone);
+    List<Order> findBySalesmanId(Integer id);
+    List<Order> finBySalesManIdAndStatus(Integer id, String status);
+    List<Order> findByRegisterDayAndSalesManId(Date registerDay, Integer id);
 }

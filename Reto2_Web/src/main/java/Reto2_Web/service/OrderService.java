@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class OrderService {
-        @Autowired
+    @Autowired
     private OrderRepository orderRepository;
 
     public List<Order> getAll(){
@@ -79,5 +79,17 @@ public class OrderService {
 
     public List<Order> getOrderByZone(String zone){
         return orderRepository.getOrderByZone(zone);
+    }
+    
+    public List<Order> getBySalesManId(Integer id){
+        return orderRepository.getBySalesManId(id);
+    }
+    
+    public List<Order> getBySalesManIdAndStatus(Integer id, String status){
+        return orderRepository.getBySalesMainIdAndStatus(id, status);
+    }
+    
+    public List<Order> getByRegisterDayAndSalesManId(String registerDay, Integer id){
+        return orderRepository.getByRegisterDayAndSalesManId(registerDay, id);
     }
 }

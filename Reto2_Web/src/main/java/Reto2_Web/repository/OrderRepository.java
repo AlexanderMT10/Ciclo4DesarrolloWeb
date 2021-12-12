@@ -2,8 +2,12 @@ package Reto2_Web.repository;
 
 import Reto2_Web.infertace.InterfaceOrder;
 import Reto2_Web.model.Order;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -38,5 +42,23 @@ public class OrderRepository {
 
     public List<Order> getOrderByZone(String zone){
         return orderCrudRepository.findBySalesManZone(zone);    
+    }
+    
+    public List<Order> getBySalesManId(Integer id){
+        return orderCrudRepository.findBySalesmanId(id);
+    }
+    
+    public List<Order> getBySalesMainIdAndStatus(Integer id, String status){
+        return orderCrudRepository.finBySalesManIdAndStatus(id, status);
+    }
+    
+    public List<Order> getByRegisterDayAndSalesManId(String registerDay, Integer id){
+        try {
+            return orderCrudRepository.findByRegisterDayAndSalesManId(new SimpleDateFormat("yyyy-MM-dd").parse(registerDay), id);
+        } catch (ParseException ex) {
+            Logger.getLogger(OrderRepository.class.getName()).log(Level.SEVERE, null, ex);
+            //ex.printStackTrace();
+            return null;
+        }
     }
 }
