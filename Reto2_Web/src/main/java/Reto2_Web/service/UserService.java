@@ -7,6 +7,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 /**
  *
  * @author JhonA
@@ -51,12 +54,12 @@ public class UserService {
                 if (user.getName() != null){
                     userDb.get().setName(user.getName());
                 }
-//                if (user.getBirthtDay() != null){
-//                   userDb.get().setBirthtDay(user.getBirthtDay());
-//                }
-//                if (user.getMonthBirthtDay() != null){
-//                    userDb.get().setMonthBirthtDay(user.getMonthBirthtDay());
-//                }
+                if (user.getBirthtDay() != null){
+                   userDb.get().setBirthtDay(user.getBirthtDay());
+                }
+                if (user.getMonthBirthtDay() != null){
+                    userDb.get().setMonthBirthtDay(user.getMonthBirthtDay());
+                }
                 if (user.getAddress() != null){
                     userDb.get().setAddress(user.getAddress());
                 }
@@ -103,5 +106,9 @@ public class UserService {
         }else{
             return usuario.get();
         }
+    }
+
+    public List<User> getByMonthBirthDay(String month){
+        return userRepository.getByMonthBirthDay(month);
     }
 }

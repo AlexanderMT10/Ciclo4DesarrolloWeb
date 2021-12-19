@@ -7,6 +7,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 /**
  *
  * @author JhonA
@@ -82,6 +85,14 @@ public class CosmeticService {
             return true;
         }).orElse(false);
         return aBoolean;
+    }
+
+    public List<Cosmetic> getByPrice(double price){
+        return cosmeticCrudRepository.getByPrice(price);
+    }
+
+    public List<Cosmetic> getByDescriptionContains(String description){
+        return cosmeticCrudRepository.getByDescriptionContains(description);
     }
             
 }

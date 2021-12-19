@@ -7,6 +7,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Optional;
 /**
  *
  * @author JhonA
@@ -44,5 +46,9 @@ public class UserRepository {
     
     public Optional<User> authenticateUser(String email, String password){
         return userCrudRepository.findByEmailAndPassword(email, password);
+    }
+
+    public List<User> getByMonthBirthDay(String month){
+        return userCrudRepository.findByMonthBirthtDay(month);
     }
 }

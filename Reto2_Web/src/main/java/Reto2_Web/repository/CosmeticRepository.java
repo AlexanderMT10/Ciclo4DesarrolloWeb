@@ -7,6 +7,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+import java.util.Optional;
+
 /**
  *
  * @author JhonA
@@ -34,5 +37,13 @@ public class CosmeticRepository {
     
     public void delete(Cosmetic clothe){
         repository.delete(clothe);
+    }
+
+    public List<Cosmetic> getByPrice(double price){
+        return repository.findByPrice(price);
+    }
+
+    public List<Cosmetic> getByDescriptionContains(String description){
+        return repository.findByDescriptionContainingIgnoreCase(description);
     }
 }
